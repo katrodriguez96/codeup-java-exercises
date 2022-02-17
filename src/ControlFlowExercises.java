@@ -20,6 +20,17 @@ public class ControlFlowExercises {
 //            System.out.println("i is " + i);
 //        }
 
-
+        int i;
+        for (i = 1; i <= 100; i++)  {
+            if (i % 3 == 0 & i % 5 == 0) { // use & to check both expressions. && only checks the second if applicable
+                System.out.println("FizzBuzz");
+            } else if (i % 3 == 0) {
+                System.out.println("Fizz");
+            } else if (i % 5 == 0) {
+                System.out.println("Buzz");
+            } else {
+                System.out.println(i);
+            }
+        }
     }
 }
