@@ -3,7 +3,7 @@ import java.util.Scanner; // imports must be placed at the top before the class
 public class ConsoleExercises {
     public static void main(String[] args) {
         double pi = 3.14159;
-        System.out.printf("The value of pi is approximately %.4s.%n", pi); // don't quite understand, thought it would print 4 places after decimal point
+        System.out.printf("The value of pi is approximately %.2f%n", pi); // same results as %.4s%n
         // new scanner created
         Scanner scanner = new Scanner(System.in);
         scanner.useDelimiter("\n");
