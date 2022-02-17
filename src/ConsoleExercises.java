@@ -5,7 +5,7 @@ public class ConsoleExercises {
         double pi = 3.14159;
         System.out.printf("The value of pi is approximately %.2f%n", pi); // same results as %.4s%n
         // new scanner created
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in); // creates new scanner
         scanner.useDelimiter("\n");
 //        System.out.print("Enter an integer: ");
 //        int userInput = scanner.nextInt(); // will only accept an integer
