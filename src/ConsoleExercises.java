@@ -6,7 +6,7 @@ public class ConsoleExercises {
         System.out.printf("The value of pi is approximately %.4s.%n", pi); // don't quite understand, thought it would print 4 places after decimal point
         // new scanner created
         Scanner scanner = new Scanner(System.in);
-        scanner.useDelimiter("\n"); // idk if im using this correctly
+        scanner.useDelimiter("\n");
 //        System.out.print("Enter an integer: ");
 //        int userInput = scanner.nextInt(); // will only accept an integer
 //        System.out.println("You entered: --> \"" + userInput + "\" <--");
@@ -27,8 +27,6 @@ public class ConsoleExercises {
         double length = Double.parseDouble(userLength);
         double width = Double.parseDouble(userWidth);
         double height = Double.parseDouble(userHeight);
-        System.out.println("The area of your room is: " + (length * width)); // using \n to create a new line didn't work?
-        System.out.println("The perimeter of your room is: " + ((length * 2) + (width * 2)));
-        System.out.println("The volume of your room is: " + (length * width * height));
+        System.out.println("The area of your room is: " + (length * width) + "\nThe perimeter of your room is: " + ((length * 2) + (width * 2)) + "\nThe volume of your room is: " + (length * width * height));
     }
 }
