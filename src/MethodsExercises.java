@@ -17,7 +17,7 @@ public class MethodsExercises {
         for (int i = num1; i <= (num1 * num2); i+=num1) {
             if (i == (num1 * num2)) {
                 System.out.println(i);
-                return;
+                return; // don't quite get how to do this with recursion if im not supposed to use *
             }
         }
     }
@@ -26,5 +26,8 @@ public class MethodsExercises {
     }
     public static void remainder(int num1, int num2) {
         System.out.println(num1 % num2);
+    }
+    public static void getInteger(int min, int max) {
+           // bleh
     }
 }
