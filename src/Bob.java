@@ -3,9 +3,10 @@ import java.util.Scanner;
 public class Bob {
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
+//        Scanner scanner = new Scanner(System.in);
         String keepTalking;
         do {
+            Scanner scanner = new Scanner(System.in);
             System.out.print("Say something to Bob: ");
             String userInput = scanner.nextLine();
             if (userInput.endsWith("?")) {
