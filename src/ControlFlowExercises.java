@@ -1,6 +1,4 @@
-import java.util.Objects;
 import java.util.Scanner;
-import java.util.stream.IntStream; // tried to use IntStream.rangeClosed() but couldn't figure it out
 
 public class ControlFlowExercises {
     public static void main(String[] args) {
@@ -37,40 +35,40 @@ public class ControlFlowExercises {
 //            }
 //        }
 
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.print("Display how many rows? ");
-//        String userInput = scanner.next();
-//        int userInt = Integer.parseInt(userInput);
-//        System.out.println("\nHere is your table!\n\nnumber | squared | cubed\n------ | ------- | -----");
-//        for (int i = 1; i <= userInt; i++) {
-//            int squared = (int) Math.pow(i, 2);
-//            int cubed = (int) Math.pow(i, 3);
-//            if (squared >= 10) { // if statement to keep the table layout up to double-digit numbers. there may be a better way?
-//                System.out.println(i + "      | " + squared + "      | " + cubed);
-//            } else {
-//                System.out.println(i + "      | " + squared + "       | " + cubed);
-//            }
-//        } // dont understand how to prompt the user to continue one more iteration outside of the for loop
-
         Scanner scanner = new Scanner(System.in);
-        String keepGrading;
-        do {
-            System.out.print("Please enter a grade from 0 - 100: ");
-            String userInput = scanner.next();
-            int i = Integer.parseInt(userInput);
-            if (i >= 88 && i <= 100) {
-                System.out.println("You got an A!");
-            } else if (i >= 80 && i <= 87) {
-                System.out.println("You got a B!");
-            } else if (i >= 67 && i <= 79) {
-                System.out.println("You got a C!");
-            } else if (i >= 60 && i <= 66) {
-                System.out.println("You got a D!");
-            } else if (i >= 0 && i <= 59) {
-                System.out.println("You got an F!");
+        System.out.print("Display how many rows? ");
+        int userInt = scanner.nextInt();
+        System.out.println("\nHere is your table!\n\nnumber | squared | cubed\n------ | ------- | -----");
+        for (int i = 1; i <= userInt; i++) {
+            int squared = (int) Math.pow(i, 2);
+            int cubed = (int) Math.pow(i, 3);
+            if (squared >= 10 & squared <= 99) {
+                System.out.println(i + "      | " + squared + "      | " + cubed);
+            } else if (squared >= 100) {
+                System.out.println(i + "      | " + squared + "     | " + cubed);
+            } else {
+                System.out.println(i + "      | " + squared + "       | " + cubed);
             }
-            System.out.println("Would you like to continue? y/n");
-            keepGrading = scanner.next();
-        } while (Objects.equals(keepGrading, "y")); // same as keepGrading == "y" ...i think
+        } // dont understand how to prompt the user to continue one more iteration outside of the for loop
+
+//        Scanner scanner = new Scanner(System.in);
+//        String keepGrading;
+//        do {
+//            System.out.print("Please enter a grade from 0 - 100: ");
+//            int i = scanner.nextInt();
+//            if (i >= 88 && i <= 100) {
+//                System.out.println("You got an A!");
+//            } else if (i >= 80 && i <= 87) {
+//                System.out.println("You got a B!");
+//            } else if (i >= 67 && i <= 79) {
+//                System.out.println("You got a C!");
+//            } else if (i >= 60 && i <= 66) {
+//                System.out.println("You got a D!");
+//            } else if (i >= 0 && i <= 59) {
+//                System.out.println("You got an F!");
+//            }
+//            System.out.println("Would you like to continue? y/n");
+//            keepGrading = scanner.next();
+//        } while (keepGrading.equalsIgnoreCase("y"));
     }
 }
