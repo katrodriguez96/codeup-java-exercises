@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class MethodsExercises {
     public static void main(String[] args) {
         add(5, 3);
@@ -5,6 +7,7 @@ public class MethodsExercises {
         multiply(5, 3);
         divide(5, 3);
         remainder(5, 3);
+        getInteger(5, 10);
     }
     public static void add(int num1, int num2) {
         System.out.println(num1 + num2);
@@ -14,12 +17,11 @@ public class MethodsExercises {
     }
     public static void multiply(int num1, int num2) {
 //        System.out.println(num1 * num2);
-        for (int i = num1; i <= (num1 * num2); i+=num1) {
-            if (i == (num1 * num2)) {
-                System.out.println(i);
-                return; // don't quite get how to do this with recursion if im not supposed to use *
-            }
-        }
+        int result = 0;
+        for(int i = 1; i <= num1; i++) {
+            result += num2;
+        } // not sure how to do this with recursion
+        System.out.println(result);
     }
     public static void divide(int num1, int num2) {
         System.out.println(num1 / num2);
@@ -28,6 +30,16 @@ public class MethodsExercises {
         System.out.println(num1 % num2);
     }
     public static void getInteger(int min, int max) {
-           // bleh
+        while (true) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.printf("Enter a number between %d and %d: ", min, max);
+            int userInput = scanner.nextInt();
+            if (userInput >= min && userInput <= max) {
+                System.out.println("Your number is inside of the specified range.");
+                break;
+            } else {
+                System.out.println("Your number is outside the range, try again");
+            }
+        }
     }
 }
