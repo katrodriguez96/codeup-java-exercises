@@ -24,13 +24,13 @@ public class Input {
     public boolean yesNo() {
         this.prompt = "Yes or no?";
         System.out.println(this.prompt);
-        String userInput = this.scanner.nextLine();
+        String userInput = this.scanner.next();
         return userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes");
     }
     public boolean yesNo(String userPrompt) {
         this.prompt = userPrompt;
         System.out.println(this.prompt);
-        String userInput = this.scanner.nextLine();
+        String userInput = this.scanner.next();
         return userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes");
     }
     public int getInt(int min, int max) {
