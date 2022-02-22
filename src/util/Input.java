@@ -12,24 +12,24 @@ public class Input {
 
     //Input methods
     public String getString() {
-        System.out.println("Type anything:");
+        this.prompt = "Type anything:";
+        System.out.println(this.prompt);
         return this.scanner.nextLine();
     }
     public String getString(String userPrompt) {
         this.prompt = userPrompt;
         System.out.println(this.prompt);
-        System.out.println("Type anything:");
         return this.scanner.nextLine();
     }
     public boolean yesNo() {
-        System.out.println("Yes or no?");
+        this.prompt = "Yes or no?";
+        System.out.println(this.prompt);
         String userInput = this.scanner.nextLine();
         return userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes");
     }
     public boolean yesNo(String userPrompt) {
         this.prompt = userPrompt;
         System.out.println(this.prompt);
-        System.out.println("Yes or no?");
         String userInput = this.scanner.nextLine();
         return userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes");
     }
@@ -46,7 +46,6 @@ public class Input {
     public int getInt(int min, int max, String userPrompt) {
         this.prompt = userPrompt;
         System.out.println(this.prompt);
-        System.out.printf("Enter a number between %d and %d:\n", min, max);
         int userInput = this.scanner.nextInt();
         if (userInput >= min && userInput <= max) {
             return userInput;
@@ -56,16 +55,16 @@ public class Input {
         }
     }
     public int getInt() {
-        System.out.println("Enter a number:");
+        this.prompt = "Enter a number:";
+        System.out.println(this.prompt);
         return this.scanner.nextInt();
     }
     public int getInt(String userPrompt) {
         this.prompt = userPrompt;
         System.out.println(this.prompt);
-        System.out.println("Enter a number:");
         return this.scanner.nextInt();
     }
-    public double getDouble (double min, double max) {
+    public double getDouble(double min, double max) {
         System.out.printf("Enter a decimal number between %f and %f:\n", min, max);
         double userInput = this.scanner.nextDouble();
         if (userInput >= min && userInput <= max) {
@@ -75,10 +74,9 @@ public class Input {
             return getDouble(min, max);
         }
     }
-    public double getDouble (double min, double max, String userPrompt) {
+    public double getDouble(double min, double max, String userPrompt) {
         this.prompt = userPrompt;
         System.out.println(this.prompt);
-        System.out.printf("Enter a decimal number between %f and %f:\n", min, max);
         double userInput = this.scanner.nextDouble();
         if (userInput >= min && userInput <= max) {
             return userInput;
@@ -88,13 +86,13 @@ public class Input {
         }
     }
     public double getDouble() {
-        System.out.println("Enter a decimal number:");
+        this.prompt = "Enter a decimal number:";
+        System.out.println(this.prompt);
         return this.scanner.nextDouble();
     }
     public double getDouble(String userPrompt) {
         this.prompt = userPrompt;
         System.out.println(this.prompt);
-        System.out.println("Enter a decimal number:");
         return this.scanner.nextDouble();
     }
 }
