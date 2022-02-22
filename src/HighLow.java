@@ -4,7 +4,9 @@ public class HighLow {
     public static void main(String[] args) {
         int max = 100;
         int min = 1;
-        int randomNum = (int) (Math.random() * (max - min + min) + 1);
+        int range = max - min + min;
+        // generate random integer from 1 - 100
+        int randomNum = (int) (Math.random() * range + min);
 //        System.out.printf("Random number from 1 to 100: %d", randomNum);
         int userGuess;
         int count = 0;
