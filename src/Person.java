@@ -1,10 +1,12 @@
 public class Person {
     private String name;
+
     // Person constructor
     public Person(String name) {
         setName(name);
     }
 
+    // Person methods
     public String getName(){
         //TODO: return the person's name
         return this.name;
