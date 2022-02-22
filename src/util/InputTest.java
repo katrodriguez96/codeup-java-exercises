@@ -4,7 +4,7 @@ public class InputTest {
     public static void main(String[] args) {
         Input testing = new Input();
 
-//        System.out.println("testing.getString() = " + testing.getString());
+        System.out.println("testing.getString() = " + testing.getString());
 
 //        System.out.println("testing.yesNo() = " + testing.yesNo());
 
@@ -14,6 +14,8 @@ public class InputTest {
 
 //        System.out.println("testing.getDouble(1.11, 11.11) = " + testing.getDouble(1.11, 11.11));
 
-        System.out.println("testing.getDouble() = " + testing.getDouble());
+//        System.out.println("testing.getDouble() = " + testing.getDouble());
+
+        System.out.println("testing.getString(\"This is an optional prompt!\") = " + testing.getString("This is an optional prompt!"));
     }
 }
