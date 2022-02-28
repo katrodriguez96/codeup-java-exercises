@@ -10,5 +10,16 @@ public class ArraysExercises {
         for (Person person : personArray) {
             System.out.println(person.getName());
         }
+        Person[] newArr = addPerson(personArray, new Person("Lemon Demon"));
+        for (Person person: newArr) {
+            System.out.println(person.getName());
+        }
+    }
+
+    public static Person[] addPerson(Person[] personObjArr, Person newPersonObj) {
+        int arrLength = personObjArr.length;
+        Person[] newArr = Arrays.copyOf(personObjArr, arrLength + 1);
+        newArr[newArr.length - 1] = newPersonObj;
+        return newArr;
     }
 }
