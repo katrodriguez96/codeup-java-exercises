@@ -1,11 +1,13 @@
 package movies;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class MoviesApplication {
+    public static Movie[] moviesArr = MoviesArray.findAll();
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String userInput;
-        Movie[] moviesArr = MoviesArray.findAll();
         do {
             System.out.println("\nWhat would you like to do?\n");
             System.out.println("0 - exit");
@@ -79,11 +81,24 @@ public class MoviesApplication {
                     }
                     break;
                 case "8":
-                    // add movie to MoviesArray
+                    // add movie to moviesArr
+                    System.out.print("Enter the movie name: ");
+                    String newMovieName = sc.nextLine();
+                    System.out.print("Enter the movie category: ");
+                    String newMovieCategory = sc.nextLine();
+                    Movie newMovie = new Movie(newMovieName, newMovieCategory);
+                    moviesArr = addMovie(moviesArr, newMovie);
                     break;
                 default:
                     System.out.println("Invalid input, try again.");
             }
         } while (!userInput.equals("0"));
+    }
+
+    public static Movie[] addMovie(Movie[] moviesArr, Movie newMovie) {
+        int arrLength = moviesArr.length;
+        Movie[] newArr = Arrays.copyOf(moviesArr, arrLength + 1);
+        newArr[newArr.length - 1] = newMovie;
+        return newArr;
     }
 }
