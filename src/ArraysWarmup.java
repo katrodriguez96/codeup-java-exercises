@@ -23,7 +23,6 @@ public class ArraysWarmup {
                 sumOdd += n;
             }
         }
-        int[] newArr = {sumOdd, sumEven};
-        return newArr;
+        return new int[]{sumOdd, sumEven};
     }
 }
