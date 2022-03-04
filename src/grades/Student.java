@@ -51,6 +51,14 @@ public class Student {
         });
         return (double) (100 * (totalDays - absences.get())) / totalDays;
     }
+    // returns list of days a student was absent
+    public void daysAbsent() {
+        this.attendance.forEach((key, value) -> {
+            if (value.equalsIgnoreCase("a")) {
+                System.out.println("Date absent: " + key);
+            }
+        });
+    }
 
     public static void main(String[] args) {
         Student kat = new Student("Kat");
