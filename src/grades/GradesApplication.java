@@ -36,32 +36,23 @@ public class GradesApplication {
         Scanner sc = new Scanner(System.in);
         String userInput;
         String userConfirm;
-        System.out.println("Welcome!\n");
+        System.out.println("Welcome!");
         do{
-            System.out.println("Here are the GitHub usernames of our students:\n");
+            System.out.println("\nHere are the GitHub usernames of our students:\n");
             System.out.println("|summonerSage| |redMage| |azureDragoon| |crystalExarch|\n");
             System.out.println("Which student would you like more information on?\n");
             userInput = sc.nextLine();
-            switch (userInput){
-                case "summonerSage":
-                    // view alphinaud's info
-                    // Name: Alphinaud - Github Username: summonerSage
-                    // Current average: 99.6 (first decimal place of double)
-                    break;
-                case "redMage":
-                    // view alisae's info
-                    break;
-                case "azureDragoon":
-                    // view estinien's info
-                    break;
-                case "crystalExarch":
-                    // view g'raha's info
-                    break;
-                default:
-                    System.out.printf("\nSorry, no student found with the Github username of \"%s\"", userInput);
+            if (students.containsKey(userInput)){
+                Student currentStudent = students.get(userInput); // returns Student object
+                System.out.printf("\nName: %s - Github username: %s", currentStudent.getName(), userInput);
+                System.out.printf("\nCurrent average: %.1f\n\n", currentStudent.getGradeAverage());
+            } else {
+                System.out.printf("\nSorry, no student found with the Github username of \"%s\"\n\n", userInput);
             }
             System.out.println("Would you like to see another student? [y/n]\n");
             userConfirm = sc.nextLine();
         }while(!userConfirm.equals("n"));
     }
 }
+// Name: Alphinaud - Github Username: summonerSage
+// Current average: 99.6 (first decimal place of double)
