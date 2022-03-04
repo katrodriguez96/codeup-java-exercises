@@ -13,18 +13,30 @@ public class GradesApplication {
         alphi.addGrade(100);
         alphi.addGrade(99);
         alphi.addGrade(100);
+        alphi.recordAttendance("2022-03-04", "P");
+        alphi.recordAttendance("2022-03-05", "P");
+        alphi.recordAttendance("2022-03-06", "P");
         Student ali = new Student("Alisae");
         ali.addGrade(90);
         ali.addGrade(85);
         ali.addGrade(93);
+        ali.recordAttendance("2022-03-04", "A");
+        ali.recordAttendance("2022-03-05", "P");
+        ali.recordAttendance("2022-03-06", "A");
         Student esti = new Student("Estinien");
         esti.addGrade(40);
         esti.addGrade(70);
         esti.addGrade(65);
+        esti.recordAttendance("2022-03-04", "P");
+        esti.recordAttendance("2022-03-05", "A");
+        esti.recordAttendance("2022-03-06", "P");
         Student raha = new Student("G'raha");
         raha.addGrade(95);
         raha.addGrade(90);
         raha.addGrade(89);
+        raha.recordAttendance("2022-03-04", "P");
+        raha.recordAttendance("2022-03-05", "P");
+        raha.recordAttendance("2022-03-06", "A");
 
         // Add students to HashMap
         students.put("summonerSage", alphi);
@@ -45,7 +57,8 @@ public class GradesApplication {
             if (students.containsKey(userInput)){
                 Student currentStudent = students.get(userInput); // returns Student object
                 System.out.printf("\nName: %s - Github username: %s", currentStudent.getName(), userInput);
-                System.out.printf("\nCurrent average: %.1f\n\n", currentStudent.getGradeAverage());
+                System.out.printf("\nCurrent average: %.1f", currentStudent.getGradeAverage());
+                System.out.printf("\nCurrent attendance average: %.0f%%\n\n", currentStudent.getAttendanceAverage());
             } else {
                 System.out.printf("\nSorry, no student found with the Github username of \"%s\"\n\n", userInput);
             }
@@ -54,5 +67,3 @@ public class GradesApplication {
         }while(!userConfirm.equals("n"));
     }
 }
-// Name: Alphinaud - Github Username: summonerSage
-// Current average: 99.6 (first decimal place of double)

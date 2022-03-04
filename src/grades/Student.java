@@ -1,15 +1,19 @@
 package grades;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Student {
     private String name;
     private ArrayList<Integer> grades;
+    private HashMap<String, String> attendance;
 
     // Constructor
     public Student(String name) {
         this.name = name;
         this.grades = new ArrayList<>();
+        this.attendance = new HashMap<>();
     }
 
     // Methods
@@ -29,6 +33,23 @@ public class Student {
             gradeSum += grade;
         }
         return (double) gradeSum / gradesLength;
+    }
+    // records attendance
+    public void recordAttendance(String date, String value) {
+        if (value.equalsIgnoreCase("a") || value.equalsIgnoreCase("p")){
+            this.attendance.put(date, value);
+        }
+    }
+    // returns the average of the students attendance
+    public double getAttendanceAverage() {
+        int totalDays = this.attendance.size();
+        AtomicInteger absences = new AtomicInteger();
+        this.attendance.forEach((key, value) -> {
+            if (value.equalsIgnoreCase("a")) {
+                absences.getAndIncrement();
+            }
+        });
+        return (double) (100 * (totalDays - absences.get())) / totalDays;
     }
 
     public static void main(String[] args) {
