@@ -6,12 +6,13 @@ import java.util.HashMap;
 public class GroceryListApp {
     static HashMap<String, ArrayList<ArrayList<String>>> groceryList = new HashMap<>();
     // <Category, List<Item<Name, Quantity>>>
+    // <Category, List<GroceryItem.name, GroceryItem.quantity>>
     static ArrayList<ArrayList<String>> produceList = new ArrayList<>();
     static ArrayList<ArrayList<String>> dairyList = new ArrayList<>();
     static ArrayList<ArrayList<String>> meatList = new ArrayList<>();
     static ArrayList<ArrayList<String>> otherList = new ArrayList<>();
 
-    public void main(String[] args) {
+    public static void main(String[] args) {
         Input sc = new Input();
         String userCreate;
         do {
@@ -33,20 +34,25 @@ public class GroceryListApp {
                             String userItem = sc.getString("Enter the name of the item:");
                             // enter quantity of item
                             String userQuantity = String.valueOf(sc.getInt("Enter the quantity of the item:"));
-                            updateList(userCategory, addItem(userItem, userQuantity));
+                            GroceryListApp.updateList(userCategory, addItem(userItem, userQuantity));
                             // add another item or finalize list
-                            // if final, show grocery list ordered alphabetically, grouped by category, and showing quantity
-                            // BONUS: filter results by category
-                            // SUPER BONUS: allow user to edit list items
+                            userAdd = sc.getString("Would you like to add another item? [y/n]");
                         } else {
                             System.out.println("Invalid input, try again.");
                             break;
                         }
                     } else if (userAdd.equalsIgnoreCase("n")) {
-                        System.out.println("Restarting application.");
+                        System.out.println("Finalizing list.");
+                        // if final, show grocery list ordered alphabetically, grouped by category, and showing quantity
+                        groceryList.forEach((key, value) -> {
+                            System.out.println(key); // produce
+                            System.out.println(value); // [[apple, 2], [banana, 5], [potatoes, 3]]
+                        });
+                        // BONUS: filter results by category
+                        // SUPER BONUS: allow user to edit list items
                         break;
                     } else {
-                        System.out.println("Invalid input, try again.");
+                        System.out.println("Invalid input, try again.2");
                     }
                 } while (!userAdd.equalsIgnoreCase("n"));
             } else if (userCreate.equalsIgnoreCase("n")) {
@@ -64,7 +70,7 @@ public class GroceryListApp {
         return newItem;
     }
 
-    public void updateList(String category, ArrayList<String> newItem) {
+    public static void updateList(String category, ArrayList<String> newItem) {
         ArrayList<ArrayList<String>> list = groceryList.get(category);
         list.add(newItem);
     }
