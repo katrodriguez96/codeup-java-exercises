@@ -24,18 +24,18 @@ public class Input {
     public boolean yesNo() {
         this.prompt = "Yes or no?";
         System.out.println(this.prompt);
-        String userInput = this.scanner.next();
+        String userInput = this.scanner.nextLine();
         return userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes");
     }
     public boolean yesNo(String userPrompt) {
         this.prompt = userPrompt;
         System.out.println(this.prompt);
-        String userInput = this.scanner.next();
+        String userInput = this.scanner.nextLine();
         return userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes");
     }
     public int getInt(int min, int max) {
         System.out.printf("Enter a number between %d and %d:\n", min, max);
-        int userInput = this.scanner.nextInt();
+        int userInput = Integer.parseInt(this.scanner.nextLine());
         if (userInput >= min && userInput <= max) {
             return userInput;
         } else {
@@ -46,7 +46,7 @@ public class Input {
     public int getInt(int min, int max, String userPrompt) {
         this.prompt = userPrompt;
         System.out.println(this.prompt);
-        int userInput = this.scanner.nextInt();
+        int userInput = Integer.parseInt(this.scanner.nextLine());
         if (userInput >= min && userInput <= max) {
             return userInput;
         } else {
@@ -57,12 +57,12 @@ public class Input {
     public int getInt() {
         this.prompt = "Enter a number:";
         System.out.println(this.prompt);
-        return this.scanner.nextInt();
+        return Integer.parseInt(this.scanner.nextLine());
     }
     public int getInt(String userPrompt) {
         this.prompt = userPrompt;
         System.out.println(this.prompt);
-        return this.scanner.nextInt();
+        return Integer.parseInt(this.scanner.nextLine());
     }
     public double getDouble(double min, double max) {
         System.out.printf("Enter a decimal number between %f and %f:\n", min, max);
