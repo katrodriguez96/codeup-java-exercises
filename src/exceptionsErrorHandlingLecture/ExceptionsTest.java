@@ -19,6 +19,10 @@ public class ExceptionsTest {
             System.out.println("This is a runtime exception.");
             System.out.println("Here's an example of .getMessage() " + exceptionObject.getMessage());
             exceptionObject.printStackTrace();
+        } catch (Exception exceptionObject) {
+            System.out.println("This is a generic, top level exception");
+            System.out.println("Here's an example of .getMessage() " + exceptionObject.getMessage());
+            exceptionObject.printStackTrace();
         }
     }
 }
