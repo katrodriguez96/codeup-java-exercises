@@ -55,14 +55,42 @@ public class Input {
         }
     }
     public int getInt() {
-        this.prompt = "Enter a number:";
-        System.out.println(this.prompt);
-        return Integer.parseInt(this.scanner.nextLine());
+        try {
+            String s = getString("Enter a number:");
+            return Integer.valueOf(s);
+        } catch (NumberFormatException exceptionObj) {
+            System.out.println("This is a number format exception.");
+            exceptionObj.printStackTrace();
+            String s = getString();
+            return Integer.valueOf(s);
+        } catch (Exception exceptionObj) {
+            System.out.println("This is a generic exception.");
+            exceptionObj.printStackTrace();
+            String s = getString();
+            return Integer.valueOf(s);
+        }
+//        this.prompt = "Enter a number:";
+//        System.out.println(this.prompt);
+//        return Integer.parseInt(this.scanner.nextLine());
     }
     public int getInt(String userPrompt) {
-        this.prompt = userPrompt;
-        System.out.println(this.prompt);
-        return Integer.parseInt(this.scanner.nextLine());
+        try {
+            String s = getString(userPrompt);
+            return Integer.valueOf(s);
+        } catch (NumberFormatException exceptionObj) {
+            System.out.println("This is a number format exception.");
+            exceptionObj.printStackTrace();
+            String s = getString(userPrompt);
+            return Integer.valueOf(s);
+        } catch (Exception exceptionObj) {
+            System.out.println("This is a generic exception.");
+            exceptionObj.printStackTrace();
+            String s = getString(userPrompt);
+            return Integer.valueOf(s);
+        }
+//        this.prompt = userPrompt;
+//        System.out.println(this.prompt);
+//        return Integer.parseInt(this.scanner.nextLine());
     }
     public double getDouble(double min, double max) {
         System.out.printf("Enter a decimal number between %f and %f:\n", min, max);
@@ -86,13 +114,47 @@ public class Input {
         }
     }
     public double getDouble() {
-        this.prompt = "Enter a decimal number:";
-        System.out.println(this.prompt);
-        return this.scanner.nextDouble();
+        try {
+            String s = getString("Enter a number:");
+            return Double.valueOf(s);
+        } catch (NumberFormatException exceptionObj) {
+            System.out.println("This is a number format exception.");
+            exceptionObj.printStackTrace();
+            String s = getString();
+            return Double.valueOf(s);
+        } catch (Exception exceptionObj) {
+            System.out.println("This is a generic exception.");
+            exceptionObj.printStackTrace();
+            String s = getString();
+            return Double.valueOf(s);
+        }
+//        this.prompt = "Enter a decimal number:";
+//        System.out.println(this.prompt);
+//        return this.scanner.nextDouble();
     }
     public double getDouble(String userPrompt) {
-        this.prompt = userPrompt;
-        System.out.println(this.prompt);
-        return this.scanner.nextDouble();
+        try {
+            String s = getString(userPrompt);
+            return Double.valueOf(s);
+        } catch (NumberFormatException exceptionObj) {
+            System.out.println("This is a number format exception.");
+            exceptionObj.printStackTrace();
+            String s = getString(userPrompt);
+            return Double.valueOf(s);
+        } catch (Exception exceptionObj) {
+            System.out.println("This is a generic exception.");
+            exceptionObj.printStackTrace();
+            String s = getString(userPrompt);
+            return Double.valueOf(s);
+        }
+//        this.prompt = userPrompt;
+//        System.out.println(this.prompt);
+//        return this.scanner.nextDouble();
+    }
+
+    public static void main(String[] args) {
+        Input in = new Input();
+        in.getInt();
+        in.getDouble();
     }
 }
